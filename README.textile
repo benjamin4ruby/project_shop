@@ -4,7 +4,7 @@ This will be our example ruby-on-rails application to get started becoming a rub
 Feedback about coding-style, security etc. is always welcome.
 
 h2. Features planned:
-* A product can have many categories, a photo, a price, a title, and a non-specified set of other properties
+* A product can have many categories, an image, a price, a title, a description, and a non-specified set of other properties
 * Categories can have 1 (several?) parent category
 * Search (most relevant products first)
 * Shopping Cart
