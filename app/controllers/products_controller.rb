@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  auto_complete_for :property, :key
+  auto_complete_for :property, :value
+
   # GET /products
   # GET /products.xml
   def index

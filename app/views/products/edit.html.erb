@@ -23,6 +23,10 @@
     <%= f.label :image %><br />
     <%= f.text_field :image %>
   </p>
+  <% f.fields_for :properties do |f_p| 
+  	render :partial => 'edit_property', :locals => { :form => f_p }
+  end
+  %>
   <p>
     <%= f.submit "Update" %>
   </p>

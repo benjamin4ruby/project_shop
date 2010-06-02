@@ -3,7 +3,8 @@ class CreateProperties < ActiveRecord::Migration
     create_table :properties do |t|
       t.string :key
       t.string :value
-
+      t.integer :product_id
+      
       t.timestamps
     end
   end

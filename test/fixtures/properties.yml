@@ -7,3 +7,18 @@ one:
 two:
   key: MyString
   value: MyString
+  
+color_blue:
+  key: color
+  value: blue
+  product: with_properties_car
+  
+color_red:
+  key: color
+  value: red
+  product: with_properties_car
+  
+shape:
+  key: shape
+  value: curved
+  product: with_properties_ball

@@ -35,3 +35,27 @@ without_image:
   published: true
   price: 9.99
   image: 
+  
+with_properties_car:
+  title: Car
+  description: The fastest car ever.
+  published: true
+  price: 100.01
+  image: 
+#  properties: color_blue, shape
+  
+with_properties_ball:
+  title: Ball
+  description: No ball has ever been more red!
+  published: true
+  price: 100.01
+  image: 
+#  properties: color_red
+
+without_properties_bicycle:
+  title: Bicycle
+  description: The fastest car ever.
+  published: true
+  price: 100.01
+  image: 
+
