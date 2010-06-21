@@ -1,6 +1,6 @@
 <h1>Editing product</h1>
-
-<% form_for(@product) do |f| %>
+<%# /* multipart: does not work yet */%>
+<% form_for(@product, :multipart => true ) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -17,11 +17,21 @@
   </p>
   <p>
     <%= f.label :price %><br />
-    <%= f.text_field :price %>
+    &euro;&nbsp;<%= f.text_field :price %>
   </p>
   <p>
     <%= f.label :image %><br />
     <%= f.text_field :image %>
+    <% unless imagefile_exists? @product.image %>
+      <div class="warning">WARNING: This file doesn't exist!</div>   
+    <% end %>
+  </p>
+  <p>
+    <b>or</b>
+  </p>
+  <p>
+    <%= f.label :upload_image, "Upload new Image" %><br />
+    <%#= f.file_field(:upload_image) %>
   </p>
   <% f.fields_for :properties do |f_p| 
   	render :partial => 'edit_property', :locals => { :form => f_p }

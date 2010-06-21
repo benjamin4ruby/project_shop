@@ -7,18 +7,8 @@ class Product < ActiveRecord::Base
   
   has_many :properties, :dependent => :destroy
   
-  # Should be moved into Helper
-  include ActionView::Helpers::NumberHelper
-
   def get_img
   	
   end
   
-  def show_price
-  	if price > 0
-  	  number_to_currency price, :unit => "€", :separator => ','
-  	else
-  	  'FREE'
-  	end
-  end
 end

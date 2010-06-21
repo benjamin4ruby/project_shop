@@ -5,17 +5,45 @@ Feedback about coding-style, security etc. is always welcome.
 
 h2. Features planned:
 * A product can have many categories, an image, a price, a title, a description, and a non-specified set of other properties
-* Categories can have 1 (several?) parent category
+* Categories can have several parent category
 * Search (most relevant products first)
 * Shopping Cart
 * Checkout
 * Register of Users
 * Admin users can:
-** Import/Export of XML
+** Import of XML
 ** Edit Product
 ** View Orders
-** Manage users
+** View user's properties, make him an admin
+* Multi-language: English, Français
+* Tests (rspec, unit)
 
 h2. Features implemented (incl. Test suite)
 
 
+
+h2. Models to implement
+
+* Product (C: CRUD) (benjamin4ruby)
+* Property (of the Product) (benjamin4ruby)
+* OrderedProduct (dorbauer)
+* Order (C: CRU) (dorbauer)
+** state: in shopping-cart, ordered, shipped
+* Client (C: CRU) (dorbauer)
+** protected attributes: password (hashed), is_admin
+* Categories (C: CRU) (benjamin4ruby minimal, dorbauer)
+
+h2. Controllers/Views to implement
+
+* Search (benjamin4ruby)
+* Import of XML (Vortigaunt)
+* Session (Login/Logout) (Vortigaunt)
+
+h2. JavaScript
+
+* Add to /Remove from Shopping Cart (with notification) (dorbauer)
+* Enlarge preview on hover (benjamin4ruby)
+
+h2. Other things to do
+
+* Translation (Vortigaunt)
