@@ -6,7 +6,7 @@ module ProductsHelper
   
   def show_currency(price)
   	if price > 0
-  	  number_to_currency price, :unit => "€", :separator => ','
+  	  number_to_currency price
   	else
   	  'FREE'
   	end

@@ -1,6 +1,7 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
+
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 
@@ -12,4 +13,17 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   filter_parameter_logging :password
+  
+
+  # Internationalisation
+  
+  before_filter :set_locale 
+  def set_locale 
+  	# if params[:locale] is nil then I18n.default_locale will be used
+  	I18n.locale = params[:locale] 
+  end 
+  
+  def default_url_options(options={})
+  	{ :locale => I18n.locale }
+  end 
 end

@@ -1,5 +1,5 @@
 <p>
-  <b>Title:</b>
+  <b><%=t :Title %>:</b>
   <%=h @product.title %>
 </p>
 
@@ -11,6 +11,11 @@
 <p>
   <b>Published:</b>
   <%=h @product.published %>
+</p>
+
+<p>
+  <b>Last updated</b>
+  <%=l @product.updated_at, :format => :short %>
 </p>
 
 <p>

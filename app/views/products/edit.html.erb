@@ -23,11 +23,11 @@
     <%= f.label :image %><br />
     <%= f.text_field :image %>
     <% unless imagefile_exists? @product.image %>
-      <div class="warning">WARNING: This file doesn't exist!</div>   
+      <div class="warning"><%=t :warning_filenotfound %></div>   
     <% end %>
   </p>
   <p>
-    <b>or</b>
+    <b><%=t 'or' %></b>
   </p>
   <p>
     <%= f.label :upload_image, "Upload new Image" %><br />
@@ -35,10 +35,9 @@
   </p>
   <% f.fields_for :properties do |f_p| 
   	render :partial => 'edit_property', :locals => { :form => f_p }
-  end
-  %>
+  end %>
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit I18n.t(:update) %>
   </p>
 <% end %>
 
