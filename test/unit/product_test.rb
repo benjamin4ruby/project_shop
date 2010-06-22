@@ -1,3 +1,7 @@
+# To run all unit tests: 
+# rake 
+# rake test:unit
+
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
