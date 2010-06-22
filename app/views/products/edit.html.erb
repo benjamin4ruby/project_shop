@@ -30,7 +30,7 @@
     <b><%=t 'or' %></b>
   </p>
   <p>
-    <%= f.label :upload_image, "Upload new Image" %><br />
+    <%= f.label :upload_image %><br />
     <%#= f.file_field(:upload_image) %>
   </p>
   <% f.fields_for :properties do |f_p| 
@@ -41,5 +41,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<%= link_to I18n.t(:show), @product %> |
+<%= link_to I18n.t(:back), products_path %>

@@ -1,15 +1,15 @@
 <p>
-  <b><%=t :Title %>:</b>
+  <b><%=t :title %>:</b>
   <%=h @product.title %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%=t :description %>:</b>
   <%=h @product.description %>
 </p>
 
 <p>
-  <b>Published:</b>
+  <b><%=t :published %>:</b>
   <%=h @product.published %>
 </p>
 
@@ -19,15 +19,15 @@
 </p>
 
 <p>
-  <b>Price:</b>
+  <b><%=t :price %>:</b>
   <%=h show_currency @product.price %>
 </p>
 
 <p>
-  <b>Image:</b>
+  <b><%=t :image %>:</b>
   <%= show_image @product %>
 </p>
 
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to I18n.t(:edit), edit_product_path(@product) %> |
+<%= link_to I18n.t(:back), products_path %>

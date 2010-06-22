@@ -11,5 +11,10 @@ en:
 
   title: "Title"
   warning_filenotfound: "WARNING: This file doesn't exist!"
+  create_new_product: "New Product"
   
+  activerecord:
+    attributes:
+      product:
+        upload_image: "Upload a new image"  
 

@@ -19,11 +19,4 @@ class Product < ActiveRecord::Base
   
   has_many :properties, :dependent => :destroy
   
-  # For security-related attributes, use:
-  # attr_accessible :name
-  
-  def get_img
-  	
-  end
-  
 end

@@ -143,7 +143,11 @@ fr:
   or: "ou"
   warning_filenotfound: "ATTENTION: Ce fichier n'existe pas sur le serveur."
 
-  
+  create_new_product: "Nouveau Produit"
+  back: "Retourner"
+  show: "Afficher"
+  edit: "Modifier"
+  destroy: "Supprimer"
   
   activerecord:
     models:
@@ -154,3 +158,4 @@ fr:
         title: "Titre"
         published: "Publié"
         price: "Prix"
+        upload_image: "Uploader une nouvelle image"
