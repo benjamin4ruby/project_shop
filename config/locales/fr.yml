@@ -142,12 +142,20 @@ fr:
   update: "Mettre à jour"
   or: "ou"
   warning_filenotfound: "ATTENTION: Ce fichier n'existe pas sur le serveur."
+  confirm_delete: "Vous voulez vraiment l'effacer?"
 
   create_new_product: "Nouveau Produit"
   back: "Retourner"
   show: "Afficher"
   edit: "Modifier"
   destroy: "Supprimer"
+
+  show_products: "Toutes les produits"
+  show_product: "Ce produit en détail"
+  edit_product: "Modifier les détails du produit"
+  new_product: "Créer un nouveau produit"
+
+  
   
   activerecord:
     models:

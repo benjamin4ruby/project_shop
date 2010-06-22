@@ -11,11 +11,19 @@ en:
 
   title: "Title"
   warning_filenotfound: "WARNING: This file doesn't exist!"
+  confirm_delete: "Are you sure?"
+  
   create_new_product: "New Product"
   back: "Back"
   show: "Show"
   edit: "Edit"
   destroy: "Delete"
+  
+  # <h1> Titles
+  show_products: "Show all Products"
+  show_product: "Show Product properties"
+  edit_product: "Edit Product properties"
+  new_product: "Create new Product"
 
   
   activerecord:
