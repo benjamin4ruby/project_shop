@@ -9,6 +9,10 @@
   <%= stylesheet_link_tag 'selba' %>
 </head>
 <body>
+<div id="language_bar">
+  <%= link_language :fr, 'Français' %>
+  <%= link_language :en, 'English' %>
+</div>
 
 <p style="color: green"><%= flash[:notice] %></p>
 

@@ -2,25 +2,14 @@
 
 <table>
   <tr>
-    <th>Image</th>
-    <th><%=t :title %></th>
-    <th>Description</th>
-    <th>Published</th>
-    <th>Price</th>
+    <th><%= Product.human_attribute_name :image %></th>
+    <th><%= Product.human_attribute_name :title %></th>
+    <th><%= Product.human_attribute_name :description %></th>
+    <th><%= Product.human_attribute_name :published %></th>
+    <th><%= Product.human_attribute_name :price %></th>
   </tr>
 
-<% for product in @products %>
-  <tr>
-    <td><%= show_image product %></td>
-    <td><%=h product.title %></td>
-    <td><%=h product.description %></td>
-    <td><%=h product.published %></td>
-    <td><%=h show_currency product.price %></td>
-    <td><%= link_to I18n.t(:show), product %></td>
-    <td><%= link_to I18n.t(:edit), edit_product_path(product) %></td>
-    <td><%= link_to I18n.t(:destroy), product, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+<%= render :partial => 'product', :collection => @products %>
 </table>
 
 <br />

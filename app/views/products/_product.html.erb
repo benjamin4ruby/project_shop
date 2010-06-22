@@ -1,0 +1,11 @@
+  <tr>
+    <td><%= show_image product %></td>
+    <td><%=h product.title %></td>
+    <td><%=h product.description %></td>
+    <td><%=h product.published %></td>
+    <td><%=h show_currency product.price %></td>
+    <td><%= link_to I18n.t(:show), product %></td>
+    <td><%= link_to I18n.t(:edit), edit_product_path(product) %></td>
+    <td><%= link_to I18n.t(:destroy), product, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+

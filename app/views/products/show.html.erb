@@ -1,30 +1,30 @@
 <p>
-  <b><%=t :title %>:</b>
+  <b><%= Product.human_attribute_name :title %>:</b>
   <%=h @product.title %>
 </p>
 
 <p>
-  <b><%=t :description %>:</b>
+  <b><%= Product.human_attribute_name :description %>:</b>
   <%=h @product.description %>
 </p>
 
 <p>
-  <b><%=t :published %>:</b>
+  <b><%= Product.human_attribute_name :published %>:</b>
   <%=h @product.published %>
 </p>
 
 <p>
-  <b>Last updated</b>
+  <b><%= Product.human_attribute_name :updated_at %></b>
   <%=l @product.updated_at, :format => :short %>
 </p>
 
 <p>
-  <b><%=t :price %>:</b>
+  <b><%= Product.human_attribute_name :price %>:</b>
   <%=h show_currency @product.price %>
 </p>
 
 <p>
-  <b><%=t :image %>:</b>
+  <b><%= Product.human_attribute_name :image %>:</b>
   <%= show_image @product %>
 </p>
 

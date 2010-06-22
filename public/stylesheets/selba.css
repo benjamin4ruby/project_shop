@@ -1,3 +1,7 @@
 .warning {
   color:red;
 }
+
+#language_bar .active {
+  font-weight:bolder;
+}
