@@ -51,4 +51,30 @@ class CategoryTest < ActiveSupport::TestCase
     should = [[ categories[0], categories[1], categories[4] ]]
     assert_equal should, categories.last.get_breadcrumbs    
   end
+  
+  test "Simple find top categories" do
+    category = TestFactory.create_category
+    top_categories = Category.find_toplevel_categories
+    
+    assert !(top_categories & [ category ]).empty?, "Simple Top Category not found"
+  end
+  
+  test "Find top categories" do
+    # c0   c1   c2
+    #  \  /    /
+    #   c3    /
+    #    \   /
+    #     c4
+    
+    categories = TestFactory.create_categories 5
+    categories[3].super_categories = categories[0..1]
+    categories[4].super_categories = categories[2..3]
+    top_categories = Category.find_toplevel_categories
+
+    should = categories[0..2]
+    should_not = categories[3..4]
+    
+    assert (should - top_categories).empty?, "Too less Toplevels found:\n#{categories.inspect}, but expected\n#{should.inspect}"
+    assert (should_not & top_categories).empty?, "Too many Toplevels found:\n#{categories.inspect}, but expected\n#{should.inspect}, intersect:\n#{(categories & categories[3..4]).inspect}"
+  end
 end

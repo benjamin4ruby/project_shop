@@ -7,13 +7,13 @@ class Category < ActiveRecord::Base
   #   updated_at : datetime 
   # =======================
 
-  has_and_belongs_to_many :sub_categories, :class_name => "Category", :foreign_key => "sub_category_id", :association_foreign_key => 'super_category_id'
-  has_and_belongs_to_many :super_categories, :class_name => "Category", :foreign_key => "super_category_id", :association_foreign_key => 'sub_category_id'
+  has_and_belongs_to_many :sub_categories, :class_name => "Category", :foreign_key => "super_category_id", :association_foreign_key => 'sub_category_id'
+  has_and_belongs_to_many :super_categories, :class_name => "Category", :foreign_key => "sub_category_id", :association_foreign_key => 'super_category_id'
   
   has_many :products
   
-  def self.get_toplevel_categories
-    #find()
+  def self.find_toplevel_categories
+    all :conditions => "id NOT IN (SELECT sub_category_id FROM categories_categories)"
   end
   
   def get_breadcrumbs
@@ -43,14 +43,13 @@ class Category < ActiveRecord::Base
   # @return Array(Array(Category)) Array of all found paths.
   def _get_breadcrumbs(ancestors)
     found = []
-    ancestors = ancestors.deep_clone.unshift self
+    ancestors = ancestors.clone.unshift self
     
     # End of recursion: one possible way found
     return [ ancestors ] if super_categories.empty?
     
     super_categories.each do |super_category|
       found += super_category._get_breadcrumbs(ancestors)
-#      return super_category._get_breadcrumbs(ancestors)
     end
     
     found
