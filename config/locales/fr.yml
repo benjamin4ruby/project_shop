@@ -78,9 +78,9 @@ fr:
       delimiter: ' '
     currency:
       format:
-        unit: '€'
+        unit: '&euro;'
         precision: 2
-        format: '%n %u'
+        format: '%n %u'
     human:
       format:
         # These three are to override number.format and are optional
@@ -138,7 +138,17 @@ fr:
         even: "doit être pair"
         record_invalid: "La validation a échoué : {{errors}}"
 
-  #title: "Titre"
+    models:
+      product: "Produit"
+      property: "Propriété"
+    attributes:
+      product:
+        title: "Titre"
+        published: "Publié"
+        price: "Prix"
+        upload_image: "Uploader une nouvelle image"
+        updated_at: "Mise à jour le"  #title: "Titre"
+
   update: "Mettre à jour"
   or: "ou"
   warning_filenotfound: "ATTENTION: Ce fichier n'existe pas sur le serveur."
@@ -154,17 +164,8 @@ fr:
   show_product: "Ce produit en détail"
   edit_product: "Modifier les détails du produit"
   new_product: "Créer un nouveau produit"
+  FREE: "GRATUIT"
 
   
   
-  activerecord:
-    models:
-      product: "Produit"
-      property: "Propriété"
-    attributes:
-      product:
-        title: "Titre"
-        published: "Publié"
-        price: "Prix"
-        upload_image: "Uploader une nouvelle image"
-        updated_at: "Mise à jour le"
+

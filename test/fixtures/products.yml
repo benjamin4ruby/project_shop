@@ -27,10 +27,10 @@ with_image:
   description: This article should have an image
   published: true
   price: 9.99
-  image: foo.jpg
+  image: foo.png
   
 without_image:
-  title: Foo
+  title: Foo without image
   description: This article shouldn't have an image
   published: true
   price: 9.99

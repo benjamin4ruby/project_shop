@@ -5,9 +5,8 @@ en:
   number:
     currency:
       format:
-        unit: '€'
-        precision: 2
-        format: '%n %u'
+        unit: '&euro;'
+        format: '%n %u'
 
   title: "Title"
   warning_filenotfound: "WARNING: This file doesn't exist!"
@@ -24,6 +23,8 @@ en:
   show_product: "Show Product properties"
   edit_product: "Edit Product properties"
   new_product: "Create new Product"
+
+  FREE: "FREE"
 
   
   activerecord:

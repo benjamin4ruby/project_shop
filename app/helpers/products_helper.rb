@@ -8,7 +8,7 @@ module ProductsHelper
   	if price > 0
   	  number_to_currency price
   	else
-  	  'FREE'
+  	  I18n.t 'FREE'
   	end
   end
   

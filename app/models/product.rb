@@ -19,4 +19,7 @@ class Product < ActiveRecord::Base
   
   has_many :properties, :dependent => :destroy
   
+  def to_s
+    title
+  end
 end
