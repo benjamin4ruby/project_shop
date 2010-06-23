@@ -22,4 +22,8 @@ class Product < ActiveRecord::Base
   def to_s
     title
   end
+  
+  def inspect
+    "#<#{to_s}: #{price} €>"
+  end
 end

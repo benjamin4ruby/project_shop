@@ -40,14 +40,31 @@ end
 # To avoid having to maintain fixtures :
 # see http://www.dcmanges.com/blog/38
 class TestFactory
+
   def self.create_product(attributes = {})
     default_attributes = {
-      :title => "Default Title",
+      :title => "Default Product Title",
       :description => "Test a little bit more ...",
       :published => true,
       :price => 4.00,
-      :image => nil,
+      :image => nil
     }
     Product.create! default_attributes.merge(attributes)
+  end
+
+  def self.create_category(attributes = {})
+    default_attributes = {
+      :title => "Default Category Title"
+    }
+    Category.create! default_attributes.merge(attributes)
+  end
+  
+  def self.create_categories(nb, attributes = {})
+    categories = []
+    nb.times do |i| 
+      default_attributes = { :title => "Category #{i}" }
+      categories << create_category(default_attributes.merge(attributes))
+    end
+    categories
   end
 end
