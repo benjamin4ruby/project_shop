@@ -8,7 +8,7 @@ class CategoryTest < ActiveSupport::TestCase
   
   test "breadcrumps simple" do
     category = TestFactory.create_category
-    assert_equal [ category ], category.get_breadcrumbs
+    assert_equal [[ category ]], category.get_breadcrumbs
   end
   
   test "breadcrumbs chain" do
@@ -17,7 +17,7 @@ class CategoryTest < ActiveSupport::TestCase
       categories[i - 1].sub_categories = [ categories[i] ] if i > 0
     end
     
-    assert_equal categories, categories.last.get_breadcrumbs
+    assert_equal [ categories ], categories.last.get_breadcrumbs
   end
 
   test "breadcrumbs tree" do
@@ -48,7 +48,7 @@ class CategoryTest < ActiveSupport::TestCase
     categories[0].sub_categories = categories[1..3]
     categories[1].sub_categories = [ categories[4] ]
     
-    should = [[ categories[4], categories[1], categories[0] ]]
+    should = [[ categories[0], categories[1], categories[4] ]]
     assert_equal should, categories.last.get_breadcrumbs    
   end
 end

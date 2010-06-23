@@ -69,15 +69,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # DELETE /categories/1
-  # DELETE /categories/1.xml
-  def destroy
-    @category = Category.find(params[:id])
-    @category.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(categories_url) }
-      format.xml  { head :ok }
-    end
-  end
+  # destroy not implemented
+  # Categories cannot be deleted
 end

@@ -17,7 +17,7 @@ class Category < ActiveRecord::Base
   end
   
   def get_breadcrumbs
-    _get_breadcrumbs
+    _get_breadcrumbs []
   end  
   
   def to_s
@@ -30,7 +30,7 @@ class Category < ActiveRecord::Base
   
   # Sorting by id (for test)
   include Comparable
-  def <=>(other)
+  def <=>(other)    
     id <=> other.id
   end
   
@@ -41,17 +41,16 @@ class Category < ActiveRecord::Base
   #
   # @param  Array(Category)        ancestors   Parents of this category.
   # @return Array(Array(Category)) Array of all found paths.
-  def _get_breadcrumbs(ancestors = [])
+  def _get_breadcrumbs(ancestors)
     found = []
-    ancestors.unshift self
-puts ancestors.inspect
+    ancestors = ancestors.deep_clone.unshift self
     
     # End of recursion: one possible way found
-    return [ ancestors ] if super_categories.nil?
+    return [ ancestors ] if super_categories.empty?
     
     super_categories.each do |super_category|
-#      found += super_category._get_breadcrumbs(ancestors)
-      return super_category._get_breadcrumbs(ancestors)
+      found += super_category._get_breadcrumbs(ancestors)
+#      return super_category._get_breadcrumbs(ancestors)
     end
     
     found
