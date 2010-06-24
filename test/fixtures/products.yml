@@ -6,7 +6,7 @@ one:
   published: true
   price: 10.01
   image: 
-
+  category: one
 
 free_beer:
   title: Free Beer
@@ -14,6 +14,7 @@ free_beer:
   published: true
   price: 0.00
   image: 
+  category: one
 
 expensive_beer:
   title: Expensive Beer
@@ -21,6 +22,7 @@ expensive_beer:
   published: true
   price: 10.01
   image: 
+  category: one
 
 with_image:
   title: Foo
@@ -28,13 +30,15 @@ with_image:
   published: true
   price: 9.99
   image: foo.png
-  
+  category: one
+ 
 without_image:
   title: Foo without image
   description: This article shouldn't have an image
   published: true
   price: 9.99
   image: 
+  category: one
   
 with_properties_car:
   title: Car
@@ -43,6 +47,7 @@ with_properties_car:
   price: 100.01
   image: 
 #  properties: color_blue, shape
+  category: cloth
   
 with_properties_ball:
   title: Ball
@@ -51,6 +56,7 @@ with_properties_ball:
   price: 100.01
   image: 
 #  properties: color_red
+  category: cloth
 
 without_properties_bicycle:
   title: Bicycle
@@ -58,4 +64,5 @@ without_properties_bicycle:
   published: true
   price: 100.01
   image: 
+  category: cloth
 
