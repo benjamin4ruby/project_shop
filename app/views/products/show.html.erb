@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <b><%= Product.human_attribute_name :category_id %>:</b>
+  <%=h @product.category %>
+</p>
+
+<p>
   <b><%= Product.human_attribute_name :description %>:</b>
   <%=h @product.description %>
 </p>

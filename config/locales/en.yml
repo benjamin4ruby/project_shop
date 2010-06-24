@@ -25,6 +25,8 @@ en:
   new_product: "Create new Product"
 
   FREE: "FREE"
+  
+  NoCategoriesFound: "No Categories found."
 
   
   activerecord:

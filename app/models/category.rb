@@ -53,7 +53,6 @@ class Category < ActiveRecord::Base
     other.ancestor_of? self
   end
   
-  
   def self.find_toplevel_categories
     all :conditions => "id NOT IN (SELECT sub_category_id FROM categories_categories)"
   end

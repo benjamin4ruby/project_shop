@@ -141,6 +141,7 @@ fr:
     models:
       product: "Produit"
       property: "Propriété"
+      category: "Rubrique"
     attributes:
       product:
         title: "Titre"
@@ -148,6 +149,10 @@ fr:
         price: "Prix"
         upload_image: "Uploader une nouvelle image"
         updated_at: "Mise à jour le"  #title: "Titre"
+        category_id: "Rubrique du produit"
+      category:
+        title: "Titre"
+
 
   update: "Mettre à jour"
   or: "ou"
@@ -166,6 +171,7 @@ fr:
   new_product: "Créer un nouveau produit"
   FREE: "GRATUIT"
 
-  
+  NoCategoriesFound: "Aucune rubrique trouvée."
+
   
 
