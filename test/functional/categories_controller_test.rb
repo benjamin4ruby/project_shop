@@ -14,7 +14,7 @@ class CategoriesControllerTest < ActionController::TestCase
 
   test "should create category" do
     assert_difference('Category.count') do
-      post :create, :category => { }
+      post :create, :category => { :title => 'test' }
     end
 
     assert_redirected_to category_path(assigns(:category))
@@ -35,11 +35,9 @@ class CategoriesControllerTest < ActionController::TestCase
     assert_redirected_to category_path(assigns(:category))
   end
 
-  test "should destroy category" do
-    assert_difference('Category.count', -1) do
+  test "should not destroy category" do
+    assert_raise ActionController::UnknownAction do
       delete :destroy, :id => categories(:one).to_param
     end
-
-    assert_redirected_to categories_path
   end
 end

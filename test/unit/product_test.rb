@@ -60,4 +60,9 @@ class ProductTest < ActiveSupport::TestCase
     end
   end
 
+  test "product must have a category" do
+    assert_raise ActiveRecord::RecordInvalid do 
+      TestFactory.create_product :category_id => nil
+    end
+  end
 end

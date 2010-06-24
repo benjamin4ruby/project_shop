@@ -8,15 +8,15 @@ one:
   image: 
 
 
-free:
+free_beer:
   title: Free Beer
   description: This year's special offering! 2 bottles max. per person.
   published: true
   price: 0.00
   image: 
 
-for10euros01:
-  title: Free Beer
+expensive_beer:
+  title: Expensive Beer
   description: This year's special offering! 2 bottles max. per person.
   published: true
   price: 10.01

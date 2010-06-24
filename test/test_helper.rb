@@ -47,7 +47,8 @@ class TestFactory
       :description => "Test a little bit more ...",
       :published => true,
       :price => 4.00,
-      :image => nil
+      :image => nil,
+      :category_id => 1
     }
     Product.create! default_attributes.merge(attributes)
   end

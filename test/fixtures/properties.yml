@@ -1,12 +1,12 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  key: MyString
-  value: MyString
+  key: Name
+  value: One
 
 two:
-  key: MyString
-  value: MyString
+  key: Name
+  value: Two
   
 color_blue:
   key: color
