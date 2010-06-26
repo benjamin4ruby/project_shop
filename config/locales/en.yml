@@ -17,9 +17,11 @@ en:
   show: "Show"
   edit: "Edit"
   destroy: "Delete"
+  update: "Update"
+  or: "or"
   
   # <h1> Titles
-  show_products: "Show all Products"
+  show_products: "All Products"
   show_product: "Show Product properties"
   edit_product: "Edit Product properties"
   new_product: "Create new Product"
@@ -27,6 +29,12 @@ en:
   FREE: "FREE"
   
   NoCategoriesFound: "No Categories found."
+  NoProductsFound: "No Products found."
+  NoProductsInThisCategory: "Sorry, no products in this category."
+  nProductsInThisCategory:
+    one: "1 product in this category."
+    other: "{{count}} products in this category."
+  
 
   
   activerecord:

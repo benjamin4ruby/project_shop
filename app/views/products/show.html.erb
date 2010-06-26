@@ -1,9 +1,5 @@
-<h1><%=t :show_product %></h1>
-
-<p>
-  <b><%= Product.human_attribute_name :title %>:</b>
-  <%=h @product.title %>
-</p>
+<% title @product.title %>
+<%= show_product_breadcrumbs @product %>
 
 <p>
   <b><%= Product.human_attribute_name :category_id %>:</b>

@@ -172,6 +172,10 @@ fr:
   FREE: "GRATUIT"
 
   NoCategoriesFound: "Aucune rubrique trouvée."
-
+  NoProductsFound: "Aucun produit trouvé."
+  NoProductsInThisCategory: "Désolé, il n'y a aucun produit dans cette catégorie."
+  nProductsInThisCategory:
+    one: "1 produit dans cette catégorie."
+    other: "{{count}} produits dans cette catégorie."
   
 

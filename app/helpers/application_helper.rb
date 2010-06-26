@@ -11,4 +11,8 @@ module ApplicationHelper
   def locale_active?(locale)
     I18n.locale == locale
   end
+  
+  def title(title)
+    @title = t(title, :default => "").presence || h(title)
+  end
 end

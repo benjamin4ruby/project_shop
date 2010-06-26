@@ -1,3 +1,7 @@
+.crumb_current {
+  font-weight:bolder;  
+}
+
 .warning {
   color:red;
 }

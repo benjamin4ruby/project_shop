@@ -1,8 +1,8 @@
-<p>
-  <b>Title:</b>
-  <%=h @category.title %>
-</p>
+<% title @category.title %>
+
+<%= show_breadcrumbs @category %>
+<%= render :partial => 'products/products', :locals => { :products => @category.products } %>
 
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to t(:edit), edit_category_path(@category) %> |
+<%= link_to t(:back), categories_path %>

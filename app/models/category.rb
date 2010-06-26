@@ -15,6 +15,7 @@ class Category < ActiveRecord::Base
   has_many :products
   
   def validate_add_sub_category(sub_category)
+    raise ActiveRecord::AssociationTypeMismatch, "The category cannot be associated to itself", caller if sub_category == self
     raise ActiveRecord::AssociationTypeMismatch, "The category cannot be added: a parent category cannot be subcategory at the same time.", caller if descendant_of? sub_category
     raise ActiveRecord::AssociationTypeMismatch, "The category cannot be added: a parent category cannot be subcategory at the same time.", caller if ancestor_of? sub_category
   end
@@ -33,6 +34,8 @@ class Category < ActiveRecord::Base
   def ancestor_of?(other)
 #puts "Am I #{self} ancestor of #{other}?"
 
+    # Traverse categories from self to bottom until other is found.
+    #
     # Not very performant, but categories shouldn't be too nested anyway.
     #
     # Possible Amelioriations:
@@ -41,11 +44,11 @@ class Category < ActiveRecord::Base
 
     subs = sub_categories
     if subs.empty?
-      false
+      false          # Reached the end of the tree, so continue recursion elsewhere
     elsif subs.include? other
-      true
+      true           # Found, so back out of the recursion
     else
-      subs.any? { |cat| cat.ancestor_of? other }
+      subs.any? { |cat| cat.ancestor_of? other } # Tree continues
     end
   end
   

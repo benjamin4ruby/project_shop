@@ -1,0 +1,20 @@
+<% if (products.empty?) %>
+  <p>
+    <%=t 'NoProductsInThisCategory' %>
+  </p>
+<% else %>
+  <p>
+    <%=t 'nProductsInThisCategory', :count => products.count %>
+  </p>
+  <table>
+    <tr>
+      <th><%= Product.human_attribute_name :image %></th>
+      <th><%= Product.human_attribute_name :title %></th>
+      <th><%= Product.human_attribute_name :description %></th>
+      <th><%= Product.human_attribute_name :published %></th>
+      <th><%= Product.human_attribute_name :price %></th>
+    </tr>
+
+  <%= render :partial => 'products/product', :collection => products %>
+  </table>
+<% end %>

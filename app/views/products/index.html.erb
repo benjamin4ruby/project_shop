@@ -1,16 +1,6 @@
-<h1><%=t :show_products %></h1>
+<% title :show_products %>
 
-<table>
-  <tr>
-    <th><%= Product.human_attribute_name :image %></th>
-    <th><%= Product.human_attribute_name :title %></th>
-    <th><%= Product.human_attribute_name :description %></th>
-    <th><%= Product.human_attribute_name :published %></th>
-    <th><%= Product.human_attribute_name :price %></th>
-  </tr>
-
-<%= render :partial => 'product', :collection => @products %>
-</table>
+<%= render :partial => 'products', :locales => { :products => @products } %>
 
 <br />
 

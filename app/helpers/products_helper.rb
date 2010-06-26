@@ -35,4 +35,9 @@ module ProductsHelper
   def imagefile_exists?(img)
     File.exist? file_image(img)
   end
+  
+  def show_product_breadcrumbs(product)
+    show_breadcrumbs(product.category, product.title)
+  end
+
 end
