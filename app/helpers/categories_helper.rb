@@ -17,6 +17,20 @@ module CategoriesHelper
     end.join(BREADCRUMBS_NL)
   end
   
+  SUBCATEGORIES_SPACER = "&nbsp;&nbsp;"
+  
+  def show_subcategories(sub_categories)
+    str = I18n.t 'nSubcategories', :count => sub_categories.count
+    if sub_categories.count > 0
+      str << ': ' + sub_categories.map do |sub|
+        link_to h(sub), sub
+      end.join(SUBCATEGORIES_SPACER)
+    else
+      str << '.'
+    end
+    str
+  end
+  
   CATEGORY_INDENT = '- '
   
   def select_categories_tag(name, selected = nil, toplevel = nil)

@@ -173,9 +173,12 @@ fr:
 
   NoCategoriesFound: "Aucune rubrique trouvée."
   NoProductsFound: "Aucun produit trouvé."
-  NoProductsInThisCategory: "Désolé, il n'y a aucun produit dans cette catégorie."
+  NoProductsInThisCategory: "Désolé, il n'y a aucun produit dans cette rubrique."
   nProductsInThisCategory:
-    one: "1 produit dans cette catégorie."
-    other: "{{count}} produits dans cette catégorie."
+    one: "1 produit dans cette rubrique."
+    other: "{{count}} produits dans cette rubrique."
+  nSubcategories:
+    one: "1 rubrique inférieure"
+    other: "{{count}} rubriques inférieures"
   
 

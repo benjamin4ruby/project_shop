@@ -1,6 +1,11 @@
 <% title @category.title %>
 
-<%= show_breadcrumbs @category %>
+<p class="breadcrumbs">
+  <%= show_breadcrumbs @category %>
+</p>
+<p class="subcategories">
+  <%= show_subcategories @category.sub_categories %>
+</p>
 <%= render :partial => 'products/products', :locals => { :products => @category.products } %>
 
 

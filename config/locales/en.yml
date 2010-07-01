@@ -34,7 +34,10 @@ en:
   nProductsInThisCategory:
     one: "1 product in this category."
     other: "{{count}} products in this category."
-  
+  nSubcategories:
+    one: "1 subcategory"
+    other: "{{count}} subcategories"
+
 
   
   activerecord:
