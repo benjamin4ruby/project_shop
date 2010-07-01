@@ -1,4 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+# Load fixtures into database: rake db:fixtures:load
 
 one:
   title: Free Beer
@@ -6,7 +7,7 @@ one:
   published: true
   price: 10.01
   image: 
-  category: one
+  category: socks
 
 free_beer:
   title: Free Beer
@@ -20,9 +21,9 @@ expensive_beer:
   title: Expensive Beer
   description: This year's special offering! 2 bottles max. per person.
   published: true
-  price: 10.01
+  price: 1099.01
   image: 
-  category: one
+  category: red
 
 with_image:
   title: Foo
@@ -53,10 +54,10 @@ with_properties_ball:
   title: Ball
   description: No ball has ever been more red!
   published: true
-  price: 100.01
+  price: 109.01
   image: 
 #  properties: color_red
-  category: cloth
+  category: adidas
 
 without_properties_bicycle:
   title: Bicycle

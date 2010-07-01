@@ -19,19 +19,18 @@ h2. Features planned:
 * Tests (rspec, unit)
 
 h2. Features implemented (incl. Test suite)
-
+* Show products & Categories (benjamin4ruby)
 
 
 h2. Models to implement
 
-* Product (C: CRUD) (benjamin4ruby)
 * Property (of the Product) (benjamin4ruby)
 * OrderedProduct (dorbauer)
 * Order (C: CRU) (dorbauer)
 ** state: in shopping-cart, ordered, shipped
 * Client (C: CRU) (dorbauer)
 ** protected attributes: password (hashed), is_admin
-* Categories (C: CRU) (benjamin4ruby minimal, dorbauer)
+* Categories (C: CRU, edit sub_categories) (dorbauer)
 
 h2. Controllers/Views to implement
 

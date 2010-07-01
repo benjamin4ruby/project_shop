@@ -20,15 +20,13 @@ module CategoriesHelper
   SUBCATEGORIES_SPACER = "&nbsp;&nbsp;"
   
   def show_subcategories(sub_categories)
+    return '' if sub_categories.count == 0
+    
     str = I18n.t 'nSubcategories', :count => sub_categories.count
-    if sub_categories.count > 0
-      str << ': ' + sub_categories.map do |sub|
-        link_to h(sub), sub
-      end.join(SUBCATEGORIES_SPACER)
-    else
-      str << '.'
-    end
-    str
+    str << ': '
+    str << sub_categories.map do |sub|
+      link_to h(sub), sub
+    end.join(SUBCATEGORIES_SPACER)
   end
   
   CATEGORY_INDENT = '- '

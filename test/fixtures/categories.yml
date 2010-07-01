@@ -3,9 +3,20 @@
 one:
   title: one
 
+red:
+  title: Red products
+
 cloth:
   title: Clothing
 
 socks:
   title: Socks
-  sub_categories: cloth
+  super_categories: cloth
+  
+tshirts:
+  title: T-Shirts
+  super_categories: cloth
+  
+adidas:
+  title: Adidas Socks
+  super_categories: socks, red
