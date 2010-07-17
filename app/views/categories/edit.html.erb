@@ -9,18 +9,19 @@
   </p>
   <p>
     <%=t 'existing_subcategories' %>
-    
+    <%= render :partial => 'categories', :locals => { :other_categories => @category.sub_categories, :category => @category, :id => 'subcategories' } %>
   </p>
   <p>
     <%=t 'existing_supercategories' %>
-    
+    <%= render :partial => 'categories', :locals =>  { :other_categories => @category.super_categories, :category => @category, :id => 'supercategories' } %>    
   </p>
   <p>
     <%= f.submit 'Update' %>
   </p>
-  <p>
 <% end %>
-<%= select_categories_tag('test') { |c| !c.relative_of?(@category) } %>
 
 <%= link_to t(:show), @category %> |
 <%= link_to t(:back), categories_path %>
+
+<br /><br /><br /><br /><br /><br />
+<%= select_new_subcategory_tag(@category) %>

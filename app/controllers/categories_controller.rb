@@ -71,4 +71,21 @@ class CategoriesController < ApplicationController
 
   # destroy not implemented
   # Categories cannot be deleted
+
+  # Destroy the relationship between 2 category
+  def destroy
+    @category = Category.find(params[:id])
+    @other_category = Category.find(params[:other_id])
+    
+    if (@category.sub_categories.include?(@other_category))
+      @category.sub_categories -= [@other_category]
+    elsif (@category.super_categories.include?(@other_category))
+      @category.super_categories -= [@other_category]
+    else
+      flash[:error] = t(:error_category_association_not_found)
+    end
+  rescue ActiveRecord::RecordNotFound
+      flash[:error] = t(:error_category_doesnt_exist)
+  end
+
 end

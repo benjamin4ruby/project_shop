@@ -179,6 +179,7 @@ fr:
   FREE: "GRATUIT"
 
   NoCategoriesFound: "Aucune rubrique trouvée."
+  NoCategories: "Aucune."
   NoProductsFound: "Aucun produit trouvé."
   NoProductsInThisCategory: "Désolé, il n'y a aucun produit dans cette rubrique."
   nProductsInThisCategory:
@@ -187,7 +188,13 @@ fr:
   nSubcategories:
     one: "1 rubrique inférieure"
     other: "{{count}} rubriques inférieures"
+  error_category_association_not_found: "Erreur: Cette association de rubriques n'existe pas."
+  error_category_doesnt_exist: "Erreur: Il n'y a pas de rubrique sous cette id."
+
+
+    
   existing_subcategories: "Rubriques inférieures existantes :"
   existing_supercategories: "Rubriques supérieures existantes :"
-  
+  delete_category_association: "Supprimmer cette relation"
+
 

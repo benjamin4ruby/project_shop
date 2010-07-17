@@ -1,0 +1,12 @@
+if flash[:error] 
+  page.alert flash[:error]
+else
+  assoc_id = category_association_id(params[:id], params[:other_id])
+  page.remove(assoc_id)
+
+  new_select_tag = select_new_subcategory_tag(@category)
+  page.replace(select_new_subcategory_id, new_select_tag)
+end
+
+page.alert flash[:notice] if flash[:notice]
+flash.discard

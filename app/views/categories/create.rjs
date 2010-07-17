@@ -1,0 +1,12 @@
+if flash[:error] 
+  page.alert flash[:error]
+else
+  page.insert_html :bottom, 'subcategories', :partial => 'category', :locals => { :category => @other_category, :my_category => @category }
+  page['subcategories'].children.last.visual_effect :highlight
+  
+  new_select_tag = select_new_subcategory_tag(@category)
+  page.replace(select_new_subcategory_id, new_select_tag)
+end
+
+page.alert flash[:notice] if flash[:notice]
+flash.discard

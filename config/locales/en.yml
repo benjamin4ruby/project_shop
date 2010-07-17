@@ -35,6 +35,7 @@ en:
   FREE: "FREE"
   
   NoCategoriesFound: "No Categories found."
+  NoCategories: "None."
   NoProductsFound: "No Products found."
   NoProductsInThisCategory: "Sorry, no products in this category."
   nProductsInThisCategory:
@@ -43,9 +44,12 @@ en:
   nSubcategories:
     one: "1 subcategory"
     other: "{{count}} subcategories"
+  error_category_association_not_found: "Error: This category association doesn't exist."
+  error_category_doesnt_exist: "Error: No categories with this id exist."
+
   existing_subcategories: "Existing Subcategories:"
   existing_supercategories: "Existing Supercategories:"
-
+  delete_category_association: "Delete category association"
   
   activerecord:
     attributes:

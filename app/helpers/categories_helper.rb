@@ -1,5 +1,17 @@
 module CategoriesHelper
 
+  def category_association_id(id, other_id)
+    "cat_assoc_#{id.to_i}_#{other_id.to_i}"
+  end
+  
+  def select_new_subcategory_id
+    'select_new_subcategory'
+  end
+  
+  def select_new_subcategory_tag(category)
+    select_categories_tag(select_new_subcategory_id) { |c| !c.relative_of?(category) }
+  end
+  
   BREADCRUMBS_SPACER = "&nbsp;&gt; "
   BREADCRUMBS_NL = "<br />"
   def show_breadcrumbs(category, append_title = nil)
