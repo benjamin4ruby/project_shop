@@ -153,6 +153,8 @@ fr:
       category:
         title: "Titre"
 
+  application_name: "La boutique en ligne que personne utilisera"
+
 
   update: "Mettre à jour"
   or: "ou"
@@ -160,15 +162,20 @@ fr:
   confirm_delete: "Vous voulez vraiment l'effacer?"
 
   create_new_product: "Nouveau Produit"
+  create_new_category: "Nouvelle rubrique"
   back: "Retourner"
   show: "Afficher"
   edit: "Modifier"
   destroy: "Supprimer"
 
-  show_products: "Toutes les produits"
+  show_products: "Tous les produits"
   show_product: "Ce produit en détail"
   edit_product: "Modifier les détails du produit"
   new_product: "Créer un nouveau produit"
+  show_categories: "Toutes les rubriques"
+  edit_category: "Modifier rubrique"
+  new_category: "Créer une nouvelle rubrique"
+
   FREE: "GRATUIT"
 
   NoCategoriesFound: "Aucune rubrique trouvée."
@@ -180,5 +187,7 @@ fr:
   nSubcategories:
     one: "1 rubrique inférieure"
     other: "{{count}} rubriques inférieures"
+  existing_subcategories: "Rubriques inférieures existantes :"
+  existing_supercategories: "Rubriques supérieures existantes :"
   
 

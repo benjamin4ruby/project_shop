@@ -1,4 +1,4 @@
-<h1>New category</h1>
+<% title :new_category %>
 
 <% form_for(@category) do |f| %>
   <%= f.error_messages %>
@@ -12,4 +12,4 @@
   </p>
 <% end %>
 
-<%= link_to 'Back', categories_path %>
+<%= link_to t(:back), categories_path %>

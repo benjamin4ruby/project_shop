@@ -8,11 +8,14 @@ en:
         unit: '&euro;'
         format: '%n %u'
 
+  application_name: "The ruby shop nobody will use"
+  
   title: "Title"
   warning_filenotfound: "WARNING: This file doesn't exist!"
   confirm_delete: "Are you sure?"
   
   create_new_product: "New Product"
+  create_new_category: "New Category"
   back: "Back"
   show: "Show"
   edit: "Edit"
@@ -25,6 +28,9 @@ en:
   show_product: "Show Product properties"
   edit_product: "Edit Product properties"
   new_product: "Create new Product"
+  show_categories: "All categories"
+  edit_category: "Edit category"
+  new_category: "Create new category"
 
   FREE: "FREE"
   
@@ -37,7 +43,8 @@ en:
   nSubcategories:
     one: "1 subcategory"
     other: "{{count}} subcategories"
-
+  existing_subcategories: "Existing Subcategories:"
+  existing_supercategories: "Existing Supercategories:"
 
   
   activerecord:

@@ -1,6 +1,5 @@
-<h1>Editing category</h1>
+<% title :edit_category %>
 
-<% cat = @category %>
 <% form_for(@category) do |f| %>
   <%= f.error_messages %>
 
@@ -9,11 +8,19 @@
     <%= f.text_field :title %>
   </p>
   <p>
+    <%=t 'existing_subcategories' %>
+    
+  </p>
+  <p>
+    <%=t 'existing_supercategories' %>
+    
+  </p>
+  <p>
     <%= f.submit 'Update' %>
   </p>
+  <p>
 <% end %>
-<%= select_categories_tag('test') { |c| c != cat && !c.ancestor_of?(@category) && !c.descendant_of?(@category) } %>
-<%#  %>
+<%= select_categories_tag('test') { |c| !c.relative_of?(@category) } %>
 
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to t(:show), @category %> |
+<%= link_to t(:back), categories_path %>

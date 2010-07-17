@@ -19,7 +19,7 @@ h2. Features planned:
 * Tests (rspec, unit)
 
 h2. Features implemented (incl. Test suite)
-* Show products & Categories (benjamin4ruby)
+* Products & Categories (benjamin4ruby)
 
 
 h2. Models to implement
@@ -30,11 +30,11 @@ h2. Models to implement
 ** state: in shopping-cart, ordered, shipped
 * Client (C: CRU) (dorbauer)
 ** protected attributes: password (hashed), is_admin
-* Categories (C: CRU, edit sub_categories) (dorbauer)
+* Categories (C: CRU, edit sub_categories) (benjamin4ruby)
 
 h2. Controllers/Views to implement
 
-* Search (benjamin4ruby)
+* Search (benjamin4ruby?)
 * Import of XML (Vortigaunt)
 * Session (Login/Logout) (Vortigaunt)
 
@@ -46,3 +46,10 @@ h2. JavaScript
 h2. Other things to do
 
 * Translation (Vortigaunt)
+* Tests
+
+
+* Upload image (paperclip)
+** Hover enlarge
+* Properties
+* Edit Category (subcategories)
