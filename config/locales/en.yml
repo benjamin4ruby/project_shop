@@ -31,6 +31,7 @@ en:
   show_categories: "All categories"
   edit_category: "Edit category"
   new_category: "Create new category"
+  create_new_subcategory: "New subcategory"
 
   FREE: "FREE"
   

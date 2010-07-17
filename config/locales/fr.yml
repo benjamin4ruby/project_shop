@@ -175,6 +175,7 @@ fr:
   show_categories: "Toutes les rubriques"
   edit_category: "Modifier rubrique"
   new_category: "Créer une nouvelle rubrique"
+  create_new_subcategory: "Nouvelle rubrique inférieure"
 
   FREE: "GRATUIT"
 
