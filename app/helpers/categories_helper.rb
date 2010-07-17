@@ -30,8 +30,16 @@ module CategoriesHelper
   end
   
   CATEGORY_INDENT = '- '
-  
-  def select_categories_tag(name, selected = nil, toplevel = nil)
+
+=begin
+  /* 
+   * call-seq:
+   *    selected_categories_tag(name, selected = nil, toplevel = nil) { |category| block }  => html_string
+   * 
+   * Generates a select tag for all categories from <i>toplevel</i> and beneath (all of them if not specified). Takes a <i>selected</i> parameter as select_tag does; the optional <i>block</i> can be used to check if an option-tag should be enabled (false => disabled).
+   */
+=end
+  def select_categories_tag(name, selected = nil, toplevel = nil, &block)
     if toplevel.kind_of? Category
       cats = toplevel.sub_categories
     else
@@ -40,20 +48,36 @@ module CategoriesHelper
     
     return I18n.t("NoCategoriesFound") if cats.empty?
     
-    if params[name]
-      selected ||= {}
-      selected[:selected] = params[name]
-    end
+    selected ||= {}
+    selected = { :selected => selected } unless !selected.is_a? Hash
+    selected[:selected] = params[name] if params[name]
+    
     # Easier, but can't indent the title to show sub-categories:
     # select_tag name, options_from_collection_for_select(cats, :id, :title, selected)
     
-    select_tag name, options_for_select(category_options(cats), selected)
+    categories = category_options(cats)
+    
+    selected[:disabled] = disabled_options(categories.collect { |c| c[1] }, &block) if block_given?
+    
+    select_tag name, options_for_select(categories, selected)
   end
   
-
   private
-    
-  def category_options(cats, indent = "")
+  
+=begin
+  Returns <i>nil</i> if no category is disabled, array of disabled ids otherwise.
+=end
+  def disabled_options(categories, &block)
+    categories.inject([]) do |disabled, c|
+      if yield(c)
+        disabled
+      else
+        disabled << c.id
+      end
+    end
+  end
+   
+  def category_options(cats, indent = "", &block)
     return [] if cats.empty?
 #puts "ja" + indent
     
@@ -69,7 +93,7 @@ module CategoriesHelper
 
   def category_option(cat, indent)
 #    return nil if cat.title.nil?
-    [indent + '' + cat.title, cat.id]
+    [indent + cat.title, cat, cat.id]
   end
   
 end

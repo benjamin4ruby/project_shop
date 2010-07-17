@@ -1,5 +1,6 @@
 <h1>Editing category</h1>
 
+<% cat = @category %>
 <% form_for(@category) do |f| %>
   <%= f.error_messages %>
 
@@ -11,6 +12,8 @@
     <%= f.submit 'Update' %>
   </p>
 <% end %>
+<%= select_categories_tag('test') { |c| c != cat && !c.ancestor_of?(@category) && !c.descendant_of?(@category) } %>
+<%#  %>
 
 <%= link_to 'Show', @category %> |
 <%= link_to 'Back', categories_path %>

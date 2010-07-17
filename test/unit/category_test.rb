@@ -1,11 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
 class CategoryTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
-  
   test "breadcrumps simple" do
     category = TestFactory.create_category
     assert_equal [[ category ]], category.get_breadcrumbs
