@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'category_assoc/:id/:other_id', :controller => 'categories', :action => 'create'
 
   map.resources :products
+  map.resources :users
 
   map.resources :properties, 
     :collection => { 

@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
   #   password   : string 
   #   created_at : datetime 
   #   updated_at : datetime 
-  #   phone      : string 
   #   isAdmin    : boolean 
+  #   phone      : string 
   # =======================
 
   validates_presence_of :name, :forename, :address, :zip, :city, :country, :password
