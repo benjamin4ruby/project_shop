@@ -8,23 +8,21 @@
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit t(:update) %>
   </p>
 <% end %>
 <p>
   <%=t :existing_subcategories %>
-  <%= render :partial => 'categories', :locals => { :other_categories => @category.sub_categories, :category => @category, :id => 'subcategories' } %>
+  <%= render :partial => 'subcategories/categories', :locals => { :other_categories => @category.sub_categories, :category => @category, :id => 'subcategories' } %>
   <br />
-  <%= select_new_subcategory_tag(@category) %>
-  <%= link_to_remote t(:create_new_subcategory), :url => { :action => :create, :id => @category.id }, :with => "'other_id=' + $F('#{select_new_subcategory_id}')" %>
+  <%= select_new_subcategory_tag('other_id', @category) %>
+  <%= link_to_remote t(:create_new_subcategory), :url => { :controller => :subcategories, :action => :update, :id => @category.id }, :with => "'other_id=' + $F('#{select_new_subcategory_id}')", :method => 'put' %>
 </p>
 <p>
   <%=t :existing_supercategories %>
-  <%= render :partial => 'categories', :locals =>  { :other_categories => @category.super_categories, :category => @category, :id => 'supercategories' } %>    
+  <%= render :partial => 'subcategories/categories', :locals =>  { :other_categories => @category.super_categories, :category => @category, :id => 'supercategories' } %>    
 </p>
 
 <%= link_to t(:show), @category %> |
 <%= link_to t(:back), categories_path %>
-
-<br /><br /><br /><br /><br /><br />
 

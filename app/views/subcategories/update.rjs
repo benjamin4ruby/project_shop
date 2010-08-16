@@ -1,10 +1,12 @@
 if flash[:error] 
   page.alert flash[:error]
 else
+  page << "if ($('subcategories')) { "
   page.insert_html :bottom, 'subcategories', :partial => 'category', :locals => { :category => @other_category, :my_category => @category }
-  page['subcategories'].select('li:last-children').first.visual_effect :highlight
-  
-  new_select_tag = select_new_subcategory_tag(@category)
+  page['subcategories'].select('li').last.visual_effect :highlight
+  page << " } "
+
+  new_select_tag = select_new_subcategory_tag(:other_id, @category)
   page.replace(select_new_subcategory_id, new_select_tag)
 end
 
