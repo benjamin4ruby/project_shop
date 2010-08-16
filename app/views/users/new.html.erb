@@ -1,4 +1,4 @@
-<h1>Create new User</h1>
+<h1><%=t :new_user %></h1>
 
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
@@ -18,16 +18,12 @@
   <p>
     <%= f.label :password %><br />
     <%= f.password_field :password %> min. 8<br/>
-	Password confirmation<br/>
+	<%= f.label :password_confirmation %><br />
 	<%= f.password_field :password_confirmation %>
   </p>
   <p>
     <%= f.label :address %><br />
     <%= f.text_field :address %>
-  </p>
-  <p>
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
   </p>
   <p>
     <%= f.label :zip %><br />
@@ -40,6 +36,10 @@
   <p>
     <%= f.label :country %><br />
     <%= f.text_field :country %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
   </p>
   <p>
     <%= f.submit 'Create' %>

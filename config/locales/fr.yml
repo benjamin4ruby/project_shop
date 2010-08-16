@@ -142,6 +142,7 @@ fr:
       product: "Produit"
       property: "Propriété"
       category: "Rubrique"
+      user: "Utilisateur"
     attributes:
       product:
         title: "Titre"
@@ -152,8 +153,19 @@ fr:
         category_id: "Rubrique du produit"
       category:
         title: "Titre"
+      user:
+        name: "Nom"
+        forename: "Prénom"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"
+        address: "Adresse"
+        zip: "Code postale"
+        city: "Ville"
+        country: "Pays"
+        phone: "Téléphone"
+        isAdmin: "admin"
 
-  application_name: "La boutique en ligne que personne utilisera"
+  application_name: "La boutique en ligne que tout le monde utilisera !"
 
 
   update: "Mettre à jour"
@@ -163,11 +175,15 @@ fr:
 
   create_new_product: "Nouveau Produit"
   create_new_category: "Nouvelle rubrique"
+  create_new_user: "Nouvel utilisateur"
   back: "Retourner"
   show: "Afficher"
   edit: "Modifier"
   destroy: "Supprimer"
-
+  
+  new_user: "Nouvel Utilisateur"
+  show_users: "Liste des utilisateurs"
+  edit_user: "Modifier les détails de l'utilisateur"
   show_products: "Tous les produits"
   show_product: "Ce produit en détail"
   edit_product: "Modifier les détails du produit"

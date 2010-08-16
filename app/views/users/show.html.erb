@@ -1,48 +1,48 @@
 <p>
-  <b>Name:</b>
+  <b><%= User.human_attribute_name :name %>:</b>
   <%=h @user.name %>
 </p>
 
 <p>
-  <b>Forename:</b>
+  <b><%= User.human_attribute_name :forename %>:</b>
   <%=h @user.forename %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b><%= User.human_attribute_name :email %>:</b>
   <%=h @user.email %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b><%= User.human_attribute_name :adress %>:</b>
   <%=h @user.address %>
 </p>
 
 <p>
-  <b>Zip:</b>
+  <b><%= User.human_attribute_name :zip %>:</b>
   <%=h @user.zip %>
 </p>
 
 <p>
-  <b>City:</b>
+  <b><%= User.human_attribute_name :city %>:</b>
   <%=h @user.city %>
 </p>
 
 <p>
-  <b>Country:</b>
+  <b><%= User.human_attribute_name :country %>:</b>
   <%=h @user.country %>
 </p>
 
 <p>
-  <b>Phone:</b>
+  <b><%= User.human_attribute_name :phone %>:</b>
   <%=h @user.phone %>
 </p>
 
 <p>
-  <b>isAdmin:</b>
+  <b><%= User.human_attribute_name :isAdmin %>:</b>
   <%=h @user.isAdmin %>
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t(:edit), edit_user_path(@user) %> |
+<%= link_to t(:back), users_path %>

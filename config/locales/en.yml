@@ -24,6 +24,8 @@ en:
   or: "or"
   
   # <h1> Titles
+  show_users: "Show all users"
+  edit_user: "Edit User properties"
   show_products: "All Products"
   show_product: "Show Product properties"
   edit_product: "Edit Product properties"
@@ -31,6 +33,7 @@ en:
   show_categories: "All categories"
   edit_category: "Edit category"
   new_category: "Create new category"
+  new_user: "Create new user"
   create_new_subcategory: "New subcategory"
 
   FREE: "FREE"

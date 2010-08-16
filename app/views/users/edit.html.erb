@@ -1,4 +1,4 @@
-<h1>Editing user</h1>
+<h1><%=t :edit_user %></h1>
 
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
@@ -42,13 +42,15 @@
     <%= f.text_field :country %>
   </p>
   <p>
-    <%= f.label :isAdmin %><br />
-    <%= f.check_box :isAdmin %>
+	<% if isLoggedInUserAdmin? %>
+    	<%= f.label :isAdmin %><br />
+    	<%= f.check_box :isAdmin %>
+	<% end %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit t(:update) %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t(:show), @user %> |
+<%= link_to t(:back), users_path %>

@@ -3,7 +3,11 @@
 }
 
 .warning {
-  color:red;
+  color:orange;
+}
+
+#language_bar{
+  margin-top:200px;
 }
 
 #language_bar .active {
