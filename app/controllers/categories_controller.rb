@@ -40,19 +40,15 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.xml
   def create
-    if (params[:other_id])
-      create_assoc
-    else
-      @category = Category.new(params[:category])
+    @category = Category.new(params[:category])
 
-      respond_to do |format|
-        if @category.save
-          format.html { redirect_to(@category, :notice => 'Category was successfully created.') }
-          format.xml  { render :xml => @category, :status => :created, :location => @category }
-        else
-          format.html { render :action => "new" }
-          format.xml  { render :xml => @category.errors, :status => :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @category.save
+        format.html { redirect_to(@category, :notice => 'Category was successfully created.') }
+        format.xml  { render :xml => @category, :status => :created, :location => @category }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @category.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -76,17 +72,6 @@ class CategoriesController < ApplicationController
   # destroy not implemented
   # Categories cannot be deleted
 
-  # Create Subcategory association
-  def create_assoc
-    @category = Category.find(params[:id])
-    @other_category = Category.find(params[:other_id])    
-    
-    @category.sub_categories << @other_category
-  rescue ActiveRecord::RecordNotFound
-      flash[:error] = t(:error_category_doesnt_exist)
-  rescue ActiveRecord::AssociationTypeMismatch
-      flash[:error] = t(:error_category_assoc_impossible)    
-  end
 
   # Destroy the relationship between 2 category
   def destroy

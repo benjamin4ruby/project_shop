@@ -1,0 +1,6 @@
+<li id="<%= category_association_id(my_category.id, category.id) %>">
+  <%=h category.title %>&nbsp;
+  <% url = { :controller => :subcategories, :action => :destroy, :id => my_category.id, :other_id => category.id } %>
+  <% img_cross = image_tag("/images/cross.png", :border => 0, :size => "16x16", :alt => t(:delete_category_association)) %>
+  <%= link_to_remote img_cross, {:url => url }, :href => url_for(url), :title => t(:delete_category_association) %>
+</li>

@@ -2,9 +2,9 @@
 require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
 class CategoriesHelperTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
   include CategoriesHelper
-  
+
+  # Test disabled_options  
   test "No options are disabled" do
     assert_equal [], disabled_options((1..10).to_a) { true }
   end

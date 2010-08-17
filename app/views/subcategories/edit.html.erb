@@ -1,0 +1,6 @@
+<% title :create_new_subcategory %>
+<%=t :super_category %>: <%=h @category.title %>
+
+<p>
+  <%= render :partial => 'edit_form', @object => @category %>
+</p>

@@ -1,3 +1,4 @@
+# Run rake test:functionals
 require 'test_helper'
 
 class CategoriesControllerTest < ActionController::TestCase
@@ -36,7 +37,7 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   test "should not destroy category" do
-    assert_raise ActionController::UnknownAction do
+    assert_raise ActionController::RoutingError do
       delete :destroy, :id => categories(:one).to_param
     end
   end
