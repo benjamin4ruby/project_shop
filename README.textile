@@ -1,7 +1,6 @@
 h1. Project Shop
 
 This will be our example ruby-on-rails application to get started becoming a rubyist.
-Feedback about coding-style, security etc. is always welcome.
 
 h2. Features planned:
 * A product can have many categories, an image, a price, a title, a description, and a non-specified set of other properties
@@ -30,7 +29,6 @@ h2. Models to implement
 ** state: in shopping-cart, ordered, shipped
 * Client (C: CRU) (dorbauer)
 ** protected attributes: password (hashed), is_admin
-* Categories (C: CRU, edit sub_categories) (benjamin4ruby)
 
 h2. Controllers/Views to implement
 
@@ -52,4 +50,3 @@ h2. Other things to do
 * Upload image (paperclip)
 ** Hover enlarge
 * Properties
-* Edit Category (subcategories)

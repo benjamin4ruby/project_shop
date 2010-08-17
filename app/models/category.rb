@@ -79,7 +79,7 @@ class Category < ActiveRecord::Base
   # Sorting by id (for test)
   include Comparable
   def <=>(other)    
-    id <=> other.id
+    object_id <=> other.object_id
   end
   
   protected 

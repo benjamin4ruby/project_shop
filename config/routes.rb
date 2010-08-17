@@ -2,7 +2,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :categories, :except => :destroy
   map.resources :subcategories, :only => [ :edit, :update ]
   map.connect 'subcategories/:id/:other_id', :controller => 'subcategories', :action => 'destroy'
-  #map.connect 'category_assoc/:id/:other_id', :controller => 'categories', :action => 'create'
 
   map.resources :products
 

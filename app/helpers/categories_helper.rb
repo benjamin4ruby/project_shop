@@ -1,4 +1,4 @@
-module  CategoriesHelper  
+module CategoriesHelper  
   BREADCRUMBS_SPACER = "&nbsp;&gt; "
   BREADCRUMBS_NL = "<br />"
   
@@ -78,7 +78,6 @@ module  CategoriesHelper
       options << category_option(c, indent)
       options += category_options(c.sub_categories, indent + CATEGORY_INDENT)
     end
-    
     options
   end
 
