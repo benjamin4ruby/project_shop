@@ -15,7 +15,7 @@ class Category < ActiveRecord::Base
   has_many :products
   
   def validate_add_sub_category(sub_category)
-    raise ActiveRecord::AssociationTypeMismatch, "The category cannot be associated to itself", caller if sub_category == self
+    raise ActiveRecord::AssociationTypeMismatch, "The category cannot be associated to itself", caller if sub_category.id == self.id
     raise ActiveRecord::AssociationTypeMismatch, "The category cannot be added: a parent category cannot be subcategory at the same time.", caller if descendant_of? sub_category
     raise ActiveRecord::AssociationTypeMismatch, "The category cannot be added: a parent category cannot be subcategory at the same time.", caller if ancestor_of? sub_category
   end
@@ -79,7 +79,7 @@ class Category < ActiveRecord::Base
   # Sorting by id (for test)
   include Comparable
   def <=>(other)    
-    object_id <=> other.object_id
+    id <=> other.id
   end
   
   protected 

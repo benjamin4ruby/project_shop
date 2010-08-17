@@ -54,4 +54,20 @@ class SubcategoriesControllerTest < ActionController::TestCase
 
   end
   
+  test "should not create himself as a subcategory" do
+    sub_cat = categories(:one)
+    super_cat = categories(:one)  
+    assert_difference("Category.find(#{super_cat.id}).sub_categories.count", 0) do
+      put :update, :id => super_cat.id, :other_id => sub_cat.id
+    end
+  end  
+
+  test "should not create circular subcategories" do
+    sub_cat = categories(:cloth)
+    super_cat = categories(:socks)
+      
+    assert_difference("Category.find(#{super_cat.id}).sub_categories.count", 0) do
+      put :update, :id => super_cat.id, :other_id => sub_cat.id
+    end
+  end  
 end
