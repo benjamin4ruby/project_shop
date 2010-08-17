@@ -1,4 +1,5 @@
+<% options ||= {} %>
 <% form_remote_for @category, :url => subcategory_path(@category), :html => { :id => 'subcategory_edit' } do |f| %>
     <%= select_new_subcategory_tag('other_id', @category) %>
-    <%= f.submit submit_label || t(:update) %>
+    <%= f.submit options[:submit_label] || t(:update) %>
 <% end %>

@@ -1,4 +1,4 @@
-module CategoriesHelper  
+module  CategoriesHelper  
   BREADCRUMBS_SPACER = "&nbsp;&gt; "
   BREADCRUMBS_NL = "<br />"
   
@@ -30,7 +30,7 @@ module CategoriesHelper
    * Generates a select tag for all categories from <i>toplevel</i> and beneath (all of them if not specified). Takes a <i>selected</i> parameter as select_tag does; the optional <i>block</i> can be used to check if an option-tag should be enabled (false => disabled).
    */
 =end
-  def select_categories_tag(name, selected = nil, toplevel = nil, options = nil, &block)
+  def select_categories_tag(name, selected = nil, toplevel = nil, options = {}, &block)
     if toplevel.kind_of? Category
       cats = toplevel.sub_categories
     else

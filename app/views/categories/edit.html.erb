@@ -15,7 +15,7 @@
   <%=t :existing_subcategories %>
   <%= render :partial => 'subcategories/categories', :locals => { :other_categories => @category.sub_categories, :category => @category, :id => 'subcategories' } %>
   <br />
-  <%= render :partial => 'subcategories/edit_form', :category => @category, :locals => { :submit_label => t(:create_new_subcategory) } %>
+  <%= render :partial => 'subcategories/edit_form', :category => @category, :locals => { :options => { :submit_label => t(:create_new_subcategory) } } %>
 </p>
 <p>
   <%=t :existing_supercategories %>
