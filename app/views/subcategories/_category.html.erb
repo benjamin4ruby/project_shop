@@ -1,1 +1,4 @@
-<li id="<%= category_association_id(my_category.id, category.id) %>"><%=h category.title %>&nbsp;<%= link_to_remote t(:delete_category_association), :url => { :controller => :subcategories, :action => :destroy, :id => my_category.id, :other_id => category.id } %></li>
+<li id="<%= category_association_id(my_category.id, category.id) %>">
+  <%=h category.title %>&nbsp;
+  <%= link_to_remote image_tag ("/images/cross.png", :border => 0, :size => "16x16", :alt => t(:delete_category_association)), { :url => { :controller => :subcategories, :action => :destroy, :id => my_category.id, :other_id => category.id } }, :title => t(:delete_category_association) %>
+</li>

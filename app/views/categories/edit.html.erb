@@ -15,8 +15,7 @@
   <%=t :existing_subcategories %>
   <%= render :partial => 'subcategories/categories', :locals => { :other_categories => @category.sub_categories, :category => @category, :id => 'subcategories' } %>
   <br />
-  <%= select_new_subcategory_tag('other_id', @category) %>
-  <%= link_to_remote t(:create_new_subcategory), :url => { :controller => :subcategories, :action => :update, :id => @category.id }, :with => "'other_id=' + $F('#{select_new_subcategory_id}')", :method => 'put' %>
+  <%= render :partial => 'subcategories/edit_form', :category => @category, :locals => { :submit_label => t(:create_new_subcategory) } %>
 </p>
 <p>
   <%=t :existing_supercategories %>

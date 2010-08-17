@@ -176,6 +176,8 @@ fr:
   edit_category: "Modifier rubrique"
   new_category: "Créer une nouvelle rubrique"
   create_new_subcategory: "Nouvelle rubrique inférieure"
+  sub_category: "Rubrique inférieure"
+  super_category: "Rubrique supérieure"  
 
   FREE: "GRATUIT"
 

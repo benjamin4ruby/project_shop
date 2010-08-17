@@ -1,7 +1,6 @@
-<% form_remote_for @category, :url => subcategories_path(@category), :html => { :id => 'subcategory_edit' } do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= select_new_subcategory_tag('other_id', @category) %>
-    <%= f.submit t(:update) %>
-  </p>
-<% end %>
+<% title :create_new_subcategory %>
+<%=t :super_category %>: <%=h @category.title %>
+
+<p>
+  <%= render :partial => 'edit_form', @object => @category %>
+</p>

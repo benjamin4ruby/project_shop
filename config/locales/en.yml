@@ -48,6 +48,8 @@ en:
   error_category_association_not_found: "Error: This category association doesn't exist."
   error_category_doesnt_exist: "Error: No categories with this id exist."
 
+  sub_category: "Subcategory"
+  super_category: "Supercategory"  
   existing_subcategories: "Existing Subcategories:"
   existing_supercategories: "Existing Supercategories:"
   delete_category_association: "Delete category association"
