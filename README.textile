@@ -19,7 +19,7 @@ h2. Features planned:
 
 h2. Features implemented (incl. Test suite)
 * Products & Categories (benjamin4ruby)
-
+** JS: Add/Remove subcategory (benjamin4ruby)
 
 h2. Models to implement
 
@@ -40,6 +40,7 @@ h2. JavaScript
 
 * Add to /Remove from Shopping Cart (with notification) (dorbauer)
 * Enlarge preview on hover (benjamin4ruby)
+
 
 h2. Other things to do
 
