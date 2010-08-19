@@ -1,1 +1,0 @@
-<li id="<%= category_association_id(my_category.id, category.id) %>"><%=h category.title %>&nbsp;<%= link_to_remote t(:delete_category_association), :url => { :action => :destroy, :id => my_category.id, :other_id => category.id } %></li>

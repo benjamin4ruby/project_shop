@@ -198,6 +198,8 @@ fr:
   create_new_subcategory: "Nouvelle rubrique inférieure"
   edit_order: "Editer la commande"
   order_index: "Liste des commandes"
+  sub_category: "Rubrique inférieure"
+  super_category: "Rubrique supérieure"  
 
   FREE: "GRATUIT"
   status_in_shopping_cart: "Dans le panier"

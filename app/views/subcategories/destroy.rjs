@@ -4,7 +4,7 @@ else
   assoc_id = category_association_id(params[:id], params[:other_id])
   page.remove(assoc_id)
 
-  new_select_tag = select_new_subcategory_tag(@category)
+  new_select_tag = select_new_subcategory_tag(:other_id, @category)
   page.replace(select_new_subcategory_id, new_select_tag)
 end
 
