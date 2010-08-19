@@ -58,7 +58,25 @@ Rails::Initializer.run do |config|
     :key => '_project_shop_session',
     :secret      => '5a33d41f8f611bdcc3fad06dcd29f39cce3c50916e30a3541b1525b064dfc0be9a098ba8c2c73709a06dccb95c2c609418eecfa837d1562b1da5cb8672a46dd8'
   }
+    
+  require 'tlsmail'
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
 
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address => 'smtp.gmail.com',
+      :port => 587,
+      :tls => true,
+      :domain => 'rubyprojectshop.com',
+      :authentication => :plain,
+      :user_name => 'rubyprojectshop@gmail.com',
+      :password => 'bennidorianremi'
+    }
+  
+  config.action_mailer.default_content_type = "text/html"
+  
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")

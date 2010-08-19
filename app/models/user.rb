@@ -24,11 +24,15 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :message => "A user with this password already exists"
   
   def to_s
-    email
+    name + " " + forename + ": " + email
   end
   
   def inspect
-    "#<#{to_s}: #{name},#{forename}>"
+    "#<#{to_s}>"
+  end
+  
+  def isGuest
+    return id == 1
   end
   
 end

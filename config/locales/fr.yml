@@ -164,6 +164,9 @@ fr:
         country: "Pays"
         phone: "Téléphone"
         isAdmin: "admin"
+      order:
+        price: "prix"
+        user_id: "Utilisateur"
 
   application_name: "La boutique en ligne que tout le monde utilisera !"
 
@@ -181,6 +184,7 @@ fr:
   edit: "Modifier"
   destroy: "Supprimer"
   
+  add_to_shopping_card: "Ajouter au panier"
   new_user: "Nouvel Utilisateur"
   show_users: "Liste des utilisateurs"
   edit_user: "Modifier les détails de l'utilisateur"
@@ -192,8 +196,13 @@ fr:
   edit_category: "Modifier rubrique"
   new_category: "Créer une nouvelle rubrique"
   create_new_subcategory: "Nouvelle rubrique inférieure"
+  edit_order: "Editer la commande"
+  order_index: "Liste des commandes"
 
   FREE: "GRATUIT"
+  status_in_shopping_cart: "Dans le panier"
+  status_ordered: "Commande payée"
+  status_shipped: "Commande éxpédiée"
 
   NoCategoriesFound: "Aucune rubrique trouvée."
   NoCategories: "Aucune."

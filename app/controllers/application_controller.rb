@@ -15,10 +15,10 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
 
   # Internationalisation
-  before_filter :set_locale
+  before_filter :set_locale, :set_guest_as_user
   
-  def setLoggedInUser(user_id)
-    session[:user_id] = user_id
+  def set_guest_as_user
+    session[:user] = User.find(:first, :conditions => { :name => "Guest"})
   end
   
   def set_locale 

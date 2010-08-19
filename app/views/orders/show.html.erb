@@ -1,0 +1,36 @@
+<p>
+  <b><%= Order.human_attribute_name :user_id %>:</b>
+  <%=h (User.find(@order.user_id)).to_s %>
+</p>
+
+<table>
+	<tr>
+		<td align="center" width=25%><strong>Product</strong></td>
+		<td align="center" width=25%><strong>Quantity</strong></td>
+		<td align="center" width=25%><strong>Unit price</strong></td>
+		<td align="center" width=25%><strong>Price</strong></td>
+	</tr>
+<% @order.ordered_products.each do |ordered_product| %>
+	<tr>
+		<td align="center"><%= Product.find(ordered_product.product_id) %></td>
+		<td align="center"><%= ordered_product.quantity %></td>
+		<td align="center"><%= ordered_product.unit_price%></td>
+		<td align="center"><%= ordered_product.quantity * ordered_product.unit_price  %></td>
+	</tr>
+<% end %>
+</table>
+
+<p>
+  <b><%= Product.human_attribute_name :price %>:</b>
+  <%=h @order.price %> €
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h t(@order.getStatusAsString) %>
+</p>
+
+<% if isLoggedInUserAdmin? %>
+	<%= link_to t(:edit), edit_order_path(@order) %> |
+<% end %>
+<%= link_to t(:back), orders_path %>

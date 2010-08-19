@@ -20,7 +20,7 @@ class Product < ActiveRecord::Base
   validates_numericality_of :price, :greater_than_or_equal_to => 0.0
   
   has_many :properties, :dependent => :destroy
-
+  has_many :ordered_products
   belongs_to :category
     
   def to_s

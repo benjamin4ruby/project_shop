@@ -10,16 +10,36 @@
   <%= javascript_include_tag :defaults %>
 </head>
 <body>
+	
 
-<p style="color: green"><%= flash[:notice] %></p>
+<% content_tag :div, :style =>"display:none;", :id => "shopingCartBg" do %>
+<% end %>
 
-<h1><%= @title %></h1>
-<%= yield  %>
+<% content_tag :div, :style =>"display:none;", :id => "shoppingCartNotification" do %>
+	<div id="shoppingCartText"></div>
+	<input id="closeButton" type="submit" value="Ok" 
+		onclick="Element.toggle('shopingCartBg');Element.toggle('shoppingCartNotification');"/>
+<% end %>
 
-<div id="language_bar">
-  <%= link_language :fr, 'Français' %>
-  <%= link_language :en, 'English' %>
+<div id="container">
+		
+		<div id="topbar"> 
+			<%= link_language :fr, 'Français' %> |
+			<%= link_language :en, 'English' %> |
+			<%= mail_to "rubyprojectshop@gmail.com", "Contact", :subject => "Informations needed" %>
+		</div>
+		
+		<div id="navbar"> Login/SignUp, Shopping Cart, Products, Categories, Admin, MyAccount, Search
+		</div>
+
+		<div id="main">
+			
+			<p style="color: green"><%= flash[:notice] %></p>
+			
+			<h1><%= @title %></h1>
+				<%= yield  %>
+
+		</div>
 </div>
-
 </body>
 </html>

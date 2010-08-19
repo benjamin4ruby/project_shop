@@ -23,7 +23,7 @@ en:
   update: "Update"
   or: "or"
   
-  # <h1> Titles
+  add_to_shopping_card: "Add to shopping cart"
   show_users: "Show all users"
   edit_user: "Edit User properties"
   show_products: "All Products"
@@ -35,8 +35,13 @@ en:
   new_category: "Create new category"
   new_user: "Create new user"
   create_new_subcategory: "New subcategory"
+  edit_order: "Edit order"
+  order_index: "List of orders"
 
   FREE: "FREE"
+  status_in_shopping_cart: "In shopping cart"
+  status_ordered: "Order payed"
+  status_shipped: "Order shipped"
   
   NoCategoriesFound: "No Categories found."
   NoCategories: "None."

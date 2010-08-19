@@ -1,8 +1,8 @@
 module UsersHelper
   
   def isLoggedInUserAdmin?
-    loggedInUser = User.find(session[:user_id])
-    return loggedInUser.isAdmin
+    return false if session[:user] == nil 
+    return session[:user].isAdmin
   end
   
 end

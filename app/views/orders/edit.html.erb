@@ -1,0 +1,23 @@
+<h1><%= t(:edit_order) %></h1>
+
+<% form_for(@order) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label (User.find(@order.user_id)).to_s %><br />
+  </p>
+  <p>
+    <%= f.label :price %>: 
+    <%= f.label @order.price %>€
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </p>
+  <p>
+    <%= f.submit t(:update) %>
+  </p>
+<% end %>
+
+<%= link_to t(:show), @order %> |
+<%= link_to t(:back), orders_path %>

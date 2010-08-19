@@ -6,10 +6,66 @@
   color:orange;
 }
 
-#language_bar{
-  margin-top:200px;
+#closeButton{
+	
+	background-color:transparent;
+	border-style:none;
+	background-image: url(/images/closeButton.png); 
+	color: white; 
+	font-size: 16px; 
+	width:152px;
+	height:52px;
+	text-align:center;
 }
 
-#language_bar .active {
+#shoppingCartNotification{
+	
+	z-index:100;
+	width:400px;
+	height:140px;
+	background-color:white;
+	position:absolute;
+	left:390px;
+	top:175px;
+	text-align:center;
+}
+
+#shopingCartBg{
+	height:100%;
+	width:100%;
+	z-index:10;
+	background-color:black;
+	left:0;
+	opacity:0.5;
+	position:absolute;
+	top:0;
+}
+
+#shoppingCartText{
+	
+	margin:20px;
+	text-align:center;
+	font-weight:bold;
+}
+
+#container{
+	width:780px; 
+	margin:50px auto;
+}
+#topbar{
+	width:auto;
+	display:block;
+	height:40px;
+	text-align:right;
+}
+
+#topbar .active {
   font-weight:bolder;
 }
+#navbar{
+	width:auto; 
+	display:block; 
+	height:24px;
+	text-align:right;
+}
+#main{width:auto; display:block;}

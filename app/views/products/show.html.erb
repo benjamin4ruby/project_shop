@@ -31,6 +31,11 @@
   <%= show_image @product %>
 </p>
 
+<% if isLoggedInUserAdmin? %>
+	<%= link_to t(:edit), edit_product_path(@product) %> |
+<% end %>
 
-<%= link_to t(:edit), edit_product_path(@product) %> |
-<%= link_to t(:back), products_path %>
+<%= link_to t(:back), products_path %> |
+<%= link_to_remote t(:add_to_shopping_card), :url => { :controller => 'orders', 
+														   :action => 'create', 
+													   :product_id => @product.id} %>
