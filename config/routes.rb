@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :categories, :except => :destroy
   map.resources :subcategories, :only => [ :edit, :update ]
   map.connect 'subcategories/:id/:other_id', :controller => 'subcategories', :action => 'destroy'
+  map.connect 'shoppingCard', :controller => 'orders', :action => 'showShoppingCard'
+  map.connect 'removeOrderedProduct', :controller => 'orders', :action => 'removeProduct'
   map.resources :products
   map.resources :users
   map.resources :categories, :except => :destroy

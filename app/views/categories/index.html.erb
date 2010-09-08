@@ -6,11 +6,14 @@
   <tr>
     <td><%=h category.title %></td>
     <td><%= link_to t(:show), category %></td>
-    <td><%= link_to t(:edit), edit_category_path(category) %></td>
+	<% if isLoggedInUserAdmin? %>
+    	<td><%= link_to t(:edit), edit_category_path(category) %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to t(:create_new_category), new_category_path %>
+<% if isLoggedInUserAdmin? %>
+	<%= link_to t(:create_new_category), new_category_path %>
+<% end %>

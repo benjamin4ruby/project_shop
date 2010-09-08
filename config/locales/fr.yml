@@ -200,11 +200,14 @@ fr:
   order_index: "Liste des commandes"
   sub_category: "Rubrique inférieure"
   super_category: "Rubrique supérieure"  
+  no_orders: "Vous n'avez pas de commande"
+  confirm_order: "Validez la commande"
 
   FREE: "GRATUIT"
   status_in_shopping_cart: "Dans le panier"
   status_ordered: "Commande payée"
   status_shipped: "Commande éxpédiée"
+  shopping_cart: "Panier"
 
   NoCategoriesFound: "Aucune rubrique trouvée."
   NoCategories: "Aucune."

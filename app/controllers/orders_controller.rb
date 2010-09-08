@@ -2,17 +2,20 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.xml
   def index
-    if session[:user].isGuest
-      @orders = session[:order]
-    elsif session[:user].isAdmin
-      @orders = Order.all
-    else
-      @orders = Order.find(:all, :conditions => { :user_id => session[:user].id })
-    end
+    #Reserved for admin use only, shows 
+    @orders = Order.find(:all, :conditions => [ "user_id = ? AND status > 1", session[:user].id ])
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @orders }
+    end
+  end
+  
+  def showShoppingCard
+    @order = session[:order]
+    render :show do
+      format.html # show.html.erb
+      format.xml  { render :xml => @order }
     end
   end
 
@@ -64,12 +67,38 @@ class OrdersController < ApplicationController
   def addProductToShoppingCart
     if session[:order] == nil
       @order = Order.create
+      @order.user_id = session[:user].id
     else
       @order = session[:order]
     end
     self.createOrderedProduct
     @order.save
     session[:order] = @order
+  end
+  
+  def removeProduct
+     productToRemove = OrderedProduct.find(:first, :conditions => { :order_id => session[:order].id, :product_id => params[:product_id] })
+     OrderedProduct.delete(productToRemove)
+     orderToUpdate = Order.find(:first, :conditions => { :id => session[:order].id }) 
+     orderToUpdate.ordered_products.delete(productToRemove)
+     orderToUpdate.price -= productToRemove.unit_price * productToRemove.quantity
+     orderToUpdate.save
+     session[:order] = orderToUpdate
+     
+     render :update do |page|
+       if params[:locale] == "en"
+         page.replace_html 'shoppingCartText', "The product: " + 
+                                                      Product.find(params[:product_id]).title + 
+                                                      " has been removed to your shopping cart !"
+       else
+         page.replace_html 'shoppingCartText', "Le produit: " + 
+                                                      Product.find(params[:product_id]).title + 
+                                                      " a été retiré de votre panier !"
+       end                                               
+       page.toggle 'shopingCartBg'
+       page.toggle 'shoppingCartNotification'
+       page.reload
+     end
   end
   
   def showShoppingCartNotification

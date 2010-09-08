@@ -8,6 +8,7 @@
 </p>
 <%= render :partial => 'products/products', :locals => { :products => @category.products } %>
 
-
-<%= link_to t(:edit), edit_category_path(@category) %> |
+<% if isLoggedInUserAdmin? %>
+	<%= link_to t(:edit), edit_category_path(@category) %> |
+<% end %>
 <%= link_to t(:back), categories_path %>

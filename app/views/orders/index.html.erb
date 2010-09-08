@@ -1,24 +1,23 @@
 <h1><%= t(:order_index)%></h1>
 
-<table>
-  <tr>
-    <th><%= Order.human_attribute_name :user_id %></th>
-    <th><%= Order.human_attribute_name :price %></th>
-    <th>Status</th>
-  </tr>
-
-<% if @orders%>
-	<% @orders.each do |order| %>
+<% if @orders %>
+	<table>
 	  <tr>
-	    <td><%=h (User.find(order.user_id)).to_s %></td>
-	    <td><%=h order.price %>€</td>
-	    <td><%=h t(order.getStatusAsString) %></td>
-	    <td><%= link_to t(:show), order %></td>
-
-		<% if isLoggedInUserAdmin? %>
-	    	<td><%= link_to t(:edit), edit_order_path(order) %></td>
-		<% end %>
+	    <th><%= Order.human_attribute_name :user_id %></th>
+	    <th><%= Order.human_attribute_name :price %></th>
+	    <th>Status</th>
 	  </tr>
-	<% end %>
+		<% @orders.each do |order| %>
+		  	<tr>
+			    <td><%=h (User.find(order.user_id)).to_s %></td>
+		    	<td><%=h order.price %>€</td>
+		    	<td><%=h t(order.getStatusAsString) %></td>
+		    	<td><%= link_to t(:show), order %></td>
+				<td><%= link_to t(:edit), edit_order_path(order) %></td>
+			  </tr>
+		<% end %>
+	</table>
+<% else %>
+	<%= t(:no_orders)%>
 <% end %>
-</table>
+

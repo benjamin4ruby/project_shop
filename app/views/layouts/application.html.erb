@@ -29,7 +29,19 @@
 			<%= mail_to "rubyprojectshop@gmail.com", "Contact", :subject => "Informations needed" %>
 		</div>
 		
-		<div id="navbar"> Login/SignUp, Shopping Cart, Products, Categories, Admin, MyAccount, Search
+		<div id="navbar"> <%=#link_to_if(!session[:user], "Login", { :controller => "sessions", :action => "new" }) do
+	       						#link_to(session[:user].email, { :controller => "accounts", :action => "show", :id => @current_user })
+	     					#end 
+							%>
+						  <%= link_to t(:shopping_cart), {:controller => 'orders', :action => 'showShoppingCard'} %>, 
+						  <%= link_to t(:show_products), products_path() %>,
+						  <%= link_to t(:show_categories), categories_path() %>,
+						  <% if isLoggedInUserAdmin? %>
+								Admin,
+						  <% else %> 
+								MyAccount, 
+						  <% end %>
+						  Search
 		</div>
 
 		<div id="main">

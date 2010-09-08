@@ -37,11 +37,14 @@ en:
   create_new_subcategory: "New subcategory"
   edit_order: "Edit order"
   order_index: "List of orders"
+  no_orders: "you have no orders"
+  confirm_order: "Validate Order"
 
   FREE: "FREE"
   status_in_shopping_cart: "In shopping cart"
   status_ordered: "Order payed"
   status_shipped: "Order shipped"
+  shopping_cart: "Shopping Cart"
   
   NoCategoriesFound: "No Categories found."
   NoCategories: "None."
