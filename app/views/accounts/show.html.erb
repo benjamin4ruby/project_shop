@@ -1,0 +1,13 @@
+<h1>Your Account</h1>
+
+<p><%= link_to "Your Orders", :controller => 'orders', :action => 'index' %></p>
+<p><%= link_to "Your personal informations", :controller => 'users', :action => 'edit', :id => session[:user].id %></p>
+
+<% if isLoggedInUserAdmin? %>
+
+  <p><%= link_to "Import XML", :controller => 'xml', :action => 'import' %></p>
+  <p><%= link_to "Export XML", :controller => 'xml', :action => 'export' %></p>
+
+<% end %>
+
+  <p><%= link_to "Deconnexion", :controller => 'sessions', :action => 'delete' %></p>

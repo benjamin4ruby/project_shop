@@ -1,0 +1,20 @@
+<% form_tag :controller => 'products', :action => 'result' do %>
+
+  <p>
+    <%= label_tag :search %><br />
+    <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+  </p>
+
+  <p>
+    Price <%= select_tag :price_comparator, "<option>=</option><option><</option><option>></option>" %>
+          <%= text_field_tag :price, params[:search], :id => 'search_field' %>
+  </p>
+
+  <p>
+    Categories : <%= select_tag :category, options_for_select([["All Categories" , "-1"]] + @categories.collect{ |u| [u.title, u.id] })%>
+  </p>
+  <p>
+    <%= submit_tag "Search" %>
+    <%= link_to_function "Clear", "$('search_field').clear()" %>
+  </p>
+<% end %>
