@@ -85,5 +85,32 @@ module CategoriesHelper
 #    return nil if cat.title.nil?
     [indent + cat.title, cat, cat.id]
   end
+
+  def CategoriesHelper.find_products(category)
+
+    categoriesId = Array.new
+    categoriesId.push(category.id)
+
+    find_sub_products(category, categoriesId)
+
+    products = Product.find(:all, :conditions => ["category_id IN (?)", categoriesId])
+
+    return products
+      
+  end
+
+  def CategoriesHelper.find_sub_products (dbCategory, categoriesId)
+
+    if (!dbCategory.sub_categories.blank?)
+
+          dbCategory.sub_categories.each do |dbSubCategory|
+
+              categoriesId.push(dbSubCategory.id)
+
+              find_sub_products(dbSubCategory, categoriesId)
+          end
+      end
+
+  end
   
 end

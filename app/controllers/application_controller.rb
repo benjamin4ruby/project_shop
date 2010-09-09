@@ -20,6 +20,14 @@ class ApplicationController < ActionController::Base
   def set_guest_as_user
     session[:user] = User.find(:first, :conditions => { :name => "Guest"})
   end
+
+  def isLoggedInUserAdmin?
+    if (session[:user].isAdmin == true)
+      return true
+    else
+      return false
+    end
+  end
   
   def set_locale 
   	# if params[:locale] is nil then I18n.default_locale will be used

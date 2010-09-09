@@ -15,11 +15,14 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %> min. 8<br/>
-	Password confirmation<br/>
-	<%= f.password_field :password_confirmation %>
+   <p>
+    <%= f.label :password %>
+    <br />
+    <%= f.password_field(:password, :value => '', :class => 'masked_input_field') %> min. 8
+    <br/>
+    <%= f.label :password_confirmation %>
+    <br />
+    <%= f.password_field(:password_confirmation, :value => '', :class => 'masked_input_field') %>
   </p>
   <p>
     <%= f.label :address %><br />
@@ -46,6 +49,10 @@
     	<%= f.label :isAdmin %><br />
     	<%= f.check_box :isAdmin %>
 	<% end %>
+  </p>
+  <p>
+    <%= f.hidden_field(:hidden_password) %>
+    <%= f.hidden_field(:hidden_password_confirmation) %>
   </p>
   <p>
     <%= f.submit t(:update) %>

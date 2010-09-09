@@ -13,9 +13,20 @@ ActionController::Routing::Routes.draw do |map|
      :auto_complete_for_property_key => :get,
      :auto_complete_for_property_value => :get
    }
+
+  map.connect 'results', :controller => 'products', :action => 'result'
+  map.connect 'search', :controller => 'products', :action => 'search'
+
+  map.connect 'delete', :controller => 'sessions', :action => 'delete'
   
   map.connect 'category_assoc/:id/:other_id', :controller => 'categories', :action => 'destroy'
   map.connect 'category_assoc/:id/:other_id', :controller => 'categories', :action => 'create'
+
+  map.connect 'importXML', :controller => 'xml', :action => 'import'
+  map.connect 'exportXML', :controller => 'xml', :action => 'export'
+
+  map.resource :session
+  map.resource :account
   
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -49,7 +60,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "products"
+  map.root :controller => "products", :action => "index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -6,7 +6,7 @@
 <p class="subcategories">
   <%= show_subcategories @category.sub_categories %>
 </p>
-<%= render :partial => 'products/products', :locals => { :products => @category.products } %>
+<%= render :partial => 'products/products', :locals => { :products => CategoriesHelper::find_products(@category) } %>
 
 <% if isLoggedInUserAdmin? %>
 	<%= link_to t(:edit), edit_category_path(@category) %> |

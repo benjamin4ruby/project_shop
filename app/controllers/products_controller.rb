@@ -85,4 +85,26 @@ class ProductsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def search
+    @categories = Category.find(:all)
+  end
+
+  def result
+
+    puts '----------------------------' + params[:search]
+
+    @products = Product.search(params[:search], params[:price], params[:price_comparator], params[:category])
+
+    respond_to do |format|
+      if @products
+        flash[:notice] = 'Products found.'
+        format.html { render :action => "index"}
+      else
+        flash[:notice] = 'no products found.'
+        format.html { render :action => "search" }
+      end
+    end
+  end
+  
 end

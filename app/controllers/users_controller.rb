@@ -40,6 +40,10 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
+
+    params[:user][:hidden_password] = params[:user][:password]
+    params[:user][:hidden_password_confirmation] = params[:user][:password_confirmation]
+
     @user = User.new(params[:user])
 
     respond_to do |format|
@@ -56,6 +60,10 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
+
+    params[:user][:hidden_password] = params[:user][:password]
+    params[:user][:hidden_password_confirmation] = params[:user][:password_confirmation]
+
     @user = User.find(params[:id])
 
     respond_to do |format|
